@@ -41,8 +41,11 @@ class Collecting_dataGUI:
         RBbtn2 = Radiobutton(f2, variable = self.choice_var, value = "Yes", text = "Yes")
         RBbtn2.grid(row = 4, column = 1, sticky = W)
 
-        enbtn = Button(f2, text = "Enter Data")
+        enbtn = Button(f2, text = "Enter Data", command = self.enter_data)
         enbtn.grid(row = 5, columnspan = 2)
+
+        def enter_data(self):
+            Data = Person_Data(self.entry_forlb1.get(), self.entry_forlb2.get(), self.choice_var.get())
 
 
 #main routine
