@@ -4,7 +4,7 @@ from tkinter import *
 
 class Collecting_dataGUI:
     def __init__(self, parent):
-        f1 = Frame(parent, bg = "purple")
+        f1 = Frame(parent)
         f1.grid()
 
         f2 = Frame(parent)
@@ -44,10 +44,17 @@ class Collecting_dataGUI:
         enbtn = Button(f2, text = "Enter Data", command = self.enter_data)
         enbtn.grid(row = 5, columnspan = 2)
 
-        def enter_data(self):
-            Data = Person_Data(self.entry_forlb1.get(), self.entry_forlb2.get(), self.choice_var.get())
+    def enter_data(self):
+        Person_Data(self.entry_forlb1.get(), self.entry_forlb2.get(), self.choice_var.get())
+        self.entry_forlb1.delete(0, END)
+        self.entry_forlb2.delete(0, END)
 
-
+class Person_Data:
+    def __init__(self, name, age, mobile):
+        self.person_data = []
+        self.person_data.append(name)
+        self.person_data.append(age)
+        self.person_data.append(mobile)
 #main routine
 if __name__ == "__main__":        
     root = Tk()
